@@ -1,1 +1,26 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+  --font-main: 'Inter-Variable', sans-serif;
+  --font-accent: 'PressStart2P', monospace;
+  --font-weight-text: 400;
+  --font-weight-title: 700; 
+  --font-size-text: 18px;
+  --text-stroke-color: #fff;
+
+  /* градиент */
+  --background-streak-color: #d3d3d3;      
+  --background-gradient-top: #e7e7e7; 
+  --background-gradient-bottom: #1a1a1a;      
+  --background: repeating-linear-gradient(90deg, var(--background-streak-color) 0px, var(--background-streak-color) 2px, transparent 2px, transparent 4px),
+  repeating-linear-gradient(180deg, var(--background-streak-color) 0px, var(--background-streak-color) 2px, transparent 2px, transparent 4px),
+  linear-gradient(to bottom, var(--background-gradient-top) 0.01%, var(--background-gradient-bottom) 100%);
+  
+  /* цвета сердца */
+
+  --contour-color: rgb(0, 0, 0);
+  --animation-fill-color: rgba(255, 0, 0, 1); 
+
+
+--text-color: white;
+--bg-color: black;
+}

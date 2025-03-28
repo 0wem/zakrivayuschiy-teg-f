@@ -13,4 +13,347 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  inline-size: 100%;
+  max-inline-size: 700px;
+  background-image: var(--background);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: white;
+
 }
+
+.header {
+  position: relative;
+  display: flex;
+  background-color: #fff;
+  font-family: var(--accent-font, "PressStart2P"), sans-serif;
+  width: min(100%, 700px);
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 2px solid #000 ;
+  margin-top: 100px;
+  gap: 20px;
+  padding-top: 128px;
+  padding-bottom: 128px;
+  margin-bottom: 102px;
+
+}
+
+.header__title {
+  font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.header__text {
+  font-weight: 400;
+  font-size: clamp(0.875rem, 0.226rem + 2.7692cqi, 1.4375rem);
+  text-transform: uppercase;
+}
+
+.card__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+  font-family: var(--main-font), sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 695px);
+  background-color: #fff;
+  z-index: 1;
+  border: 2px solid #000;
+}
+
+.card__title {
+  font-family: var(--font-main);
+  font-variation-settings: 'wght' var(--font-weight-title);
+  font-size: var(--font-size-text);
+  padding-inline-start: 9px;
+  padding-block-start: 1px;
+  padding-inline-end: 9px;
+  min-height: 31px;
+}
+
+.card__pictures {
+  position: relative;
+}
+
+.pictures {
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
+  min-height: 696px;
+
+}
+
+.label {
+  position: absolute;
+  inset-inline-end: 24px;
+  inset-block-start: 25px;
+  mix-blend-mode: hard-light;
+  font-family: var(--font-accent);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-shadow: 
+  -0.5px -0.5px 0 var(--text-stroke-color),
+  1px -1px 0 var(--text-stroke-color),
+  -0.5px 0.5px 0 var(--text-stroke-color),
+  0.5px 0.5px 0 var(--text-stroke-color);
+}
+
+
+@supports (-webkit-text-stroke: 0.5px transparent) {
+  .text {
+      -webkit-text-stroke: 0.5px var(--text-stroke-color);
+      color: transparent; 
+  }
+}
+
+.card__footer {
+  display: flex;
+  flex-direction: column;
+  margin: 22px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: var(--font-main);
+  font-size: var(--font-size-text);
+  line-height: 21px;
+  font-variation-settings: 'wght' var(--font-weight-text);
+  max-width: 646px;
+}
+
+.button__section {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  padding-block-start: 34px;
+  padding-inline-end: 4px;
+  
+}
+
+.card__icon-button {
+  border: none;
+  background: none;
+}
+
+.card__like-button {
+  min-width: 130px;
+  max-height: 38px;
+  border: 1px solid #000;
+  background-color: #fff;
+
+}
+
+.button__text {
+  position: relative;
+  font-family: var(--font-accent);
+  font-weight: var(--font-weight-text);
+  line-height: 90%;
+  font-size: 14px;
+  z-index: 2;
+  color: var(--text-color);
+  transition: color 0.5s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+
+
+/* footer */
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  padding-block-start: 46px;
+  margin-block-end: 103px;
+  justify-content: center;
+  align-items: center;
+}
+
+.save__button {
+  display: flex;
+  flex-direction: row;
+  min-width: 335px;
+  min-height: 55px;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  gap: 5px;
+  position: relative;
+
+}
+
+.floppydisk__image {
+  max-width: 21px;
+  max-height: 21px;
+  fill: currentColor;
+  z-index: 2;
+  transition: filter 0.3s ease;
+}
+
+/* модальное окно */
+
+dialog[open] {                                      
+display: flex;
+position: fixed;
+flex-direction: column;
+gap: 30px;
+padding: 30px;
+justify-content: center;
+align-items: center;
+}
+
+dialog::backdrop {                       
+  background-color: rgba(0, 0, 0, 0.6);  
+}
+
+.modal__window {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.modal__window .button__text {    
+  text-transform: uppercase;
+  line-height: 150%;
+  max-inline-size: 234px;
+}
+
+.card__close-button {                             
+  border: 2px solid #000;
+  min-height: 38px;
+  min-width: 293px;
+  background: none;
+}
+
+.svg__modal {
+  align-self: center;
+  block-size: 39px;
+}
+
+.floppydisk__bigimage {                           
+  align-self: center;
+  min-width: 39px;
+  min-height: 39px;
+}
+
+
+/* Фильтры на картинки */
+
+.filter__blur {
+  filter: blur(3px);
+}
+
+.filter__invert {
+  filter: invert(60%);
+}
+
+.filter__opacity {
+  filter: opacity(40%);
+}
+
+.filter__brightness {
+  filter: brightness(40%);
+}
+
+.filter__contrast {
+  filter: contrast(40%);
+}
+
+.filter__sepia {
+  filter: sepia(0.6);
+}
+
+.filter__grayscale {
+  filter: grayscale(100%);
+}
+
+.filter-invert-contrast-grayscale {
+  filter: invert(60%) contrast(30%) grayscale(70%);
+}
+
+
+
+
+/* адаптация */
+
+@media (max-width: 376px) {
+  .header {
+    block-size: 325px;
+  }
+
+  .card__text {
+    max-width: 320px;
+  }
+
+  .save__button {
+    min-width: 306px;
+    min-height: 84px;
+    flex-direction: column;
+  }
+
+  .floppydisk__image {
+    max-width: 28px;
+    max-height: 28px;
+  }  
+
+  .card__list {
+    gap: 45px;
+  }
+
+  .card {
+    gap: 0px
+  }
+
+  .button__section {
+    padding-block-start: 21px;
+    padding-inline-end: 0px;
+  }
+  
+  .card__title {
+    padding-inline-start: 11px;
+    padding-inline-end: 8px;
+    padding-block-start: 8px ;
+  }
+  
+  .label {
+    inset-inline-end: 10px;
+    inset-block-start: 31px;
+  }
+  
+  .card__footer {
+    padding: 25px;
+    margin: 0px;
+  }
+  
+  .card__text {
+    gap: 27px;
+    padding-inline-start: 0px;
+  }
+
+  .pictures {
+    inline-size: 100%;
+    max-width: 373px;
+    min-height: 375px;
+  }
+
+}
+
+
+
