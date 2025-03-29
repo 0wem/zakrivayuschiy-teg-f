@@ -24,9 +24,9 @@
   background-size: cover;
   background-color: white;
   margin-block-start: 100px; 
-  margin-inline-start: clamp(0px, 26vw, 370px);
+  margin-inline-start: 260px;
   margin-block-end: 103px;
-  margin-inline-end: clamp(0px, 26vw, 370px); 
+  margin-inline-end: 260px; 
   gap: 100px;
 
 }
@@ -42,10 +42,10 @@
   align-items: center;
   flex-direction: column;
   border: 2px solid #000 ;
-  padding-inline-start: clamp(14px, 8.38vw, 120.5px);
-  padding-inline-end: clamp(14px, 8.38vw, 120.5px);
-  padding-block-start: clamp(120px, 8.9vw, 128px);
-  padding-block-end: clamp(120px, 8.9vw, 128px);
+  padding-inline-start: 84px;
+  padding-inline-end: 84px;
+  padding-block-start: 128px;
+  padding-block-end: 128px;
   gap: 20px;
 
 }
@@ -308,6 +308,22 @@ dialog::backdrop {
 /* адаптация */
 
 @media (max-width: 375px) {
+
+  .page {
+    margin-block-start: 100px; 
+    margin-inline-start: 0px;
+    margin-block-end: 103px;
+    margin-inline-end: 0px; 
+    gap: 100px;
+  }
+
+  .header {
+    padding-inline-start: 14px;
+    padding-inline-end: 14px;
+    padding-block-start: 121px;
+    padding-block-end: 121px;
+    gap: 20px;
+  }
   
   .card__title {
     max-width: 358px;
