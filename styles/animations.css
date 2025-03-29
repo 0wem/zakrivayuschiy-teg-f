@@ -38,6 +38,10 @@ button {
   padding-block-start: 4px;
 }
 
+button:focus {
+  outline: none;
+}
+
 button:not(.card__icon-button):focus-visible {
   box-shadow: 2px 2px 0px #000;
 }
