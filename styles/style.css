@@ -23,25 +23,30 @@
   background-attachment: fixed;
   background-size: cover;
   background-color: white;
+  margin-block-start: 100px; 
+  margin-inline-start: clamp(0px, 26vw, 370px);
+  margin-block-end: 103px;
+  margin-inline-end: clamp(0px, 26vw, 370px); 
+  gap: 100px;
 
 }
 
+
+/* стили хедера */
+
 .header {
-  position: relative;
   display: flex;
   background-color: #fff;
   font-family: var(--accent-font, "PressStart2P"), sans-serif;
   width: min(100%, 700px);
-  justify-self: center;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   border: 2px solid #000 ;
-  margin-top: 100px;
+  padding-inline-start: clamp(14px, 8.38vw, 120.5px);
+  padding-inline-end: clamp(14px, 8.38vw, 120.5px);
+  padding-block-start: clamp(120px, 8.9vw, 128px);
+  padding-block-end: clamp(120px, 8.9vw, 128px);
   gap: 20px;
-  padding-top: 128px;
-  padding-bottom: 128px;
-  margin-bottom: 102px;
 
 }
 
@@ -57,36 +62,42 @@
   text-transform: uppercase;
 }
 
-.card__list {
+
+/* мейн стили */
+
+
+.main {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
   gap: 50px;
-  font-family: var(--main-font), sans-serif;
+}
+
+.card__list {
+  display: grid;
+  gap: 50px;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  width: min(100%, 695px);
+  color: #000;
   background-color: #fff;
-  z-index: 1;
   border: 2px solid #000;
 }
 
 .card__title {
   font-family: var(--font-main);
   font-variation-settings: 'wght' var(--font-weight-title);
-  font-size: var(--font-size-text);
-  padding-inline-start: 9px;
-  padding-block-start: 1px;
-  padding-inline-end: 9px;
-  min-height: 31px;
+  font-size: var(--font-size-text); 
+  margin-inline-start: 10px;;
+  margin-block-start: 5px;;
+  margin-block-end: 5px;
 }
 
 .card__pictures {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .pictures {
@@ -94,7 +105,8 @@
   object-position: center;
   inline-size: 100%;
   block-size: 100%;
-  min-height: 696px;
+  border-bottom: 2px solid #000;
+  border-top: 2px solid #000;
 
 }
 
@@ -115,47 +127,53 @@
 
 
 @supports (-webkit-text-stroke: 0.5px transparent) {
-  .text {
+  .label {
       -webkit-text-stroke: 0.5px var(--text-stroke-color);
       color: transparent; 
+      text-shadow: none;
   }
 }
 
 .card__footer {
   display: flex;
   flex-direction: column;
-  margin: 22px;
+  gap: 25px;
+  margin-inline: 25px;;
+  margin-block-start: 25px;;
+  margin-block-end: 25px;;
 }
 
 .card__text {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 26.8px;
   font-family: var(--font-main);
   font-size: var(--font-size-text);
   line-height: 21px;
   font-variation-settings: 'wght' var(--font-weight-text);
-  max-width: 646px;
+  
 }
 
 .button__section {
   display: flex;
   flex-direction: row;
-  justify-content: end;
-  padding-block-start: 34px;
-  padding-inline-end: 4px;
+  align-self: end;
   
 }
 
 .card__icon-button {
-  border: none;
-  background: none;
+  block-size: 38px;
+  background-color: transparent;
+  border: 2px solid transparent;
+  cursor: pointer;
 }
 
 .card__like-button {
-  min-width: 130px;
-  max-height: 38px;
-  border: 1px solid #000;
+  position: relative;
+  block-size: 38px;
+  inline-size: 130px;
+  border: 2px solid #000;
+  overflow: hidden;
   background-color: #fff;
 
 }
@@ -172,51 +190,46 @@
   mix-blend-mode: difference;
 }
 
-
-
 /* footer */
 
-.footer {
+.save__zone {
   display: flex;
-  flex-direction: row;
-  padding-block-start: 46px;
-  margin-block-end: 103px;
   justify-content: center;
-  align-items: center;
 }
 
 .save__button {
+  position: relative;
   display: flex;
-  flex-direction: row;
-  min-width: 335px;
-  min-height: 55px;
-  background-color: #fff;
+  flex-direction: row;                        
+  block-size: 55px;
+  inline-size: 339px;
+  background-color: var(--bg-color);
   justify-content: center;
   align-items: center;
   border: 2px solid #000;
-  gap: 5px;
-  position: relative;
+  gap: 8px;
+  padding-block-start: 3px;
 
 }
 
 .floppydisk__image {
-  max-width: 21px;
-  max-height: 21px;
-  fill: currentColor;
-  z-index: 2;
-  transition: filter 0.3s ease;
+  mix-blend-mode: difference;
+  color: var(--mix-blend-color);
+  filter: brightness(0) invert(1);
+  inline-size: 21px;
+  block-size: 21px;
 }
 
 /* модальное окно */
 
-dialog[open] {                                      
-display: flex;
-position: fixed;
-flex-direction: column;
-gap: 30px;
-padding: 30px;
-justify-content: center;
-align-items: center;
+dialog[open] {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  gap: 30px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
 }
 
 dialog::backdrop {                       
@@ -235,7 +248,8 @@ dialog::backdrop {
   max-inline-size: 234px;
 }
 
-.card__close-button {                             
+.card__close-button {   
+  position: relative;                          
   border: 2px solid #000;
   min-height: 38px;
   min-width: 293px;
@@ -293,67 +307,44 @@ dialog::backdrop {
 
 /* адаптация */
 
-@media (max-width: 376px) {
-  .header {
-    block-size: 325px;
-  }
-
-  .card__text {
-    max-width: 320px;
-  }
-
-  .save__button {
-    min-width: 306px;
-    min-height: 84px;
-    flex-direction: column;
-  }
-
-  .floppydisk__image {
-    max-width: 28px;
-    max-height: 28px;
-  }  
-
-  .card__list {
-    gap: 45px;
-  }
-
-  .card {
-    gap: 0px
-  }
-
-  .button__section {
-    padding-block-start: 21px;
-    padding-inline-end: 0px;
-  }
+@media (max-width: 375px) {
   
   .card__title {
-    padding-inline-start: 11px;
-    padding-inline-end: 8px;
-    padding-block-start: 8px ;
+    max-width: 358px;
   }
   
-  .label {
-    inset-inline-end: 10px;
-    inset-block-start: 31px;
+  .label { 
+    right: 12px;
   }
   
-  .card__footer {
-    padding: 25px;
-    margin: 0px;
-  }
-  
-  .card__text {
-    gap: 27px;
-    padding-inline-start: 0px;
+  .floppydisk__image {                            
+    inline-size: 28px;
+    block-size: 28px;
   }
 
-  .pictures {
-    inline-size: 100%;
-    max-width: 373px;
-    min-height: 375px;
+  .save__button {                              
+    flex-direction: column;
+    inline-size: 306px;
+    block-size: 80px;
+  }
+  
+  .card__close-button {                          
+    inline-size: 257px;
   }
 
+  .card__footer {                         
+    margin-inline-end: 26px;
+  }
+
+  .modal__window {                          
+    max-inline-size: 257px;
+  }
+
+  dialog[open] {         
+    padding-inline: 36px;
+  }
 }
+
 
 
 
